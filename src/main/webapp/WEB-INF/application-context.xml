@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+
+	<!-- LOGGING BEANS DEFINITIONS -->
+	<bean id="loggerListener"
+		class="org.springframework.security.authentication.event.LoggerListener" />
+		
+
+
+
+
+	<!-- DATA SOURCE CONFIGURATION -->
+	<import resource="hibernate.xml" />
+
+
+
+	<!-- DAO BEANS DEFINITIONS -->
+	<bean id="batimentDAO" class="tn.insat.tpweb.gestioninfrastructure.dao.impl.BatimentDAOImpl" scope="request">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	
+	<bean id="quartierDAO" class="tn.insat.tpweb.gestioninfrastructure.dao.impl.QuartierDAOImpl" scope="request">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	
+	<bean id="gouvernoratDAO" class="tn.insat.tpweb.gestioninfrastructure.dao.impl.GouvernoratDAOImpl" scope="request">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+
+	<!-- SERVICE BEAN DEFINITIONS -->
+	<bean id="batimentService"
+		class="tn.insat.tpweb.gestioninfrastructure.services.impl.BatimentServiceImpl" scope="request">
+		<property name="batimentDAO" ref="batimentDAO" />
+	</bean>
+	
+	<bean id="gouvernoratService"
+		class="tn.insat.tpweb.gestioninfrastructure.services.impl.GouvernoratServiceImpl" scope="request">
+		<property name="gouvernoratDAO" ref="gouvernoratDAO" />
+	</bean>
+	
+	<bean id="quartierService" class="tn.insat.tpweb.gestioninfrastructure.services.impl.QuartierServiceImpl" scope="request">
+		<property name="quartierDAO" ref="quartierDAO" />
+	</bean>
+
+</beans>

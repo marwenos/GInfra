@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="tn.insat.tpweb.gestioninfrastructure.model">
+    <class name="Batiment" table="BATIMENT">
+        <id name="id" type="integer">
+            <column name="id" />
+             <generator class="sequence">
+                <param name="sequence">batiment_seq</param>
+           </generator>
+        </id>
+        <property name="codePostal" type="string">
+            <column name="code_postal" length="10"/>
+        </property>
+        
+         <property name="statutDeploiement" type="string">
+            <column name="STATUT_DEPLOIEMENT" length="1"/>
+        </property>
+        
+        <property name="adress" type="string">
+            <column name="Adresse" length="50"/>
+        </property>
+        
+        <property name="numRue" type="integer">
+            <column name="num_rue" length="10"/>
+        </property>
+        
+        <property name="coordonneesGPS" type="string">
+            <column name="coordonees_gps" length="20"/>
+        </property>
+        
+        <property name="nomResidence" type="string">
+            <column name="nom_residence" length="50"/>
+        </property>
+        
+        <property name="blocResidence" type="string">
+            <column name="nb_bloc_residence" length="1"/>
+        </property>
+        
+        <property name="numBloc" type="integer">
+            <column name="num_bloc" length="10"/>
+        </property>
+        
+        <property name="numEtage" type="integer">
+            <column name="num_etage" length="10"/>
+        </property>
+        
+        <property name="numPorte" type="integer">
+            <column name="num_porte" length="10"/>
+        </property> 
+        
+        <property name="numSTEG" type="integer">
+            <column name="num_steg" length="10"/>
+        </property> 
+        
+        <property name="verticaliteDeploye" type="string">
+            <column name="VERTICALITE_DEPLOYE" length="1"/>
+        </property> 
+        
+        <property name="conventionSyndic" type="string">
+            <column name="convention_syndic" length="1"/>
+        </property> 
+        
+        
+        <many-to-one  name="quartier" class="Quartier" lazy="false" outer-join="true" not-null="false">
+            <column name="QUARTIER" unique="true" />
+        </many-to-one>   
+        
+        <many-to-one  name="ville" class="Ville" lazy="false" outer-join="true" not-null="false">
+            <column name="VILLE" unique="true" />
+        </many-to-one> 
+        
+        <many-to-one  name="gouvernorat" class="Gouvernorat" lazy="false" outer-join="true" not-null="false">
+            <column name="GOUVERNORAT" unique="true" />
+        </many-to-one>   
+    </class>
+	
+</hibernate-mapping>

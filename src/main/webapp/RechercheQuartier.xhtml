@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<ui:composition template="/template/template.xhtml">
+
+	<ui:define name="main">
+
+		<h:form id="form" style="margin-top: 10%; margin-left:20%;">
+				
+			<p:panel style="width:50%; ">
+			
+				<h:panelGrid columns="3" style="margin-bottom:10px" cellpadding="10">  
+  
+			        <h:outputText value="Quartier :" style="width: 120px; "/> 
+			        <h:outputText value=" *" style="color: rgb(198,7,9); margin-right: 5%"></h:outputText> 
+			        <p:selectOneMenu value="#{quartierBean.quartier}" style="margin-left: 40%; width: 100%">  
+			            <f:selectItem itemLabel="-----Select One------" itemValue="" />  
+			            <f:selectItem itemLabel="Tunis" itemValue="1" />  
+			            <f:selectItem itemLabel="Ariana" itemValue="2" />  
+			            <f:selectItem itemLabel="Ben Arouss" itemValue="3" />  
+			        </p:selectOneMenu>
+				</h:panelGrid>
+	
+	
+				<h:panelGrid  style="align: center;">
+					<p:commandButton value="Rechercher" action="#{quartierBean.consulter}" style="margin-left:160%;"></p:commandButton>
+				</h:panelGrid>
+			</p:panel>
+		</h:form>
+	</ui:define>
+
+
+</ui:composition>
+
+</html>

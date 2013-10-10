@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<ui:composition template="/template/template.xhtml">
+
+	<ui:define name="main">
+		
+		<h:form id="form" style="margin-top: 10%; margin-left:20%;">
+		
+			<p:panel style="width:630px; ">
+			
+			
+			 	<p:dataTable var="element" value="#{batimentBean.listBatiment}" scrollRows="20"  
+                    scrollable="true" liveScroll="true" scrollHeight="150" id="dataTable" style="width:600px"
+                    emptyMessage="Il n'y a aucun Batiment qui correspond a Votre recherche" >  
+  
+  					<p:ajax event="rowSelect"
+							      listener="#{batimentBean.onSelectActivite}"
+							      update=":activiteForm:detail,:activiteForm:deleteBtn " />
+  					
+			        <p:column headerText="Ville" style="width: 150px;">  
+			            <h:outputText value="#{element.ville}" />  
+			        </p:column>  
+			  
+			        <p:column headerText="Gouvernorat" style="width: 150px;">  
+			            <h:outputText value="#{element.gouvernorat}" />  
+			        </p:column>  
+			  
+			        <p:column headerText="Code Postal" style="width: 150px;">  
+			            <h:outputText value="#{element.cp}" />  
+			        </p:column>  
+			  
+			        <p:column headerText="Type Batiment" style="width: 150px;">  
+			            <h:outputText value="#{element.typeBatiment}" />  
+			        </p:column>  
+			  
+			    </p:dataTable>  
+			
+			</p:panel>
+		</h:form>
+	</ui:define>
+
+
+</ui:composition>
+
+</html>

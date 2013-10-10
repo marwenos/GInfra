@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<ui:composition template="/template/template.xhtml">
+
+	<ui:define name="main">
+
+		<h:form id="form" style="margin-top: 10%; margin-left:30%;">
+			<p:panel style="width:40%; ">
+				<h:graphicImage value="/images/tunisiana.png"
+					style="height:60px; width:100%;"></h:graphicImage>
+
+				<h:panelGrid columns="2" style="margin-left:10%;">
+					<h:outputText value="Nom d'utilisateur" style="width:100%"></h:outputText>
+					<h:inputText value="#{helloBean.name}"
+						style="margin-left:30%; width:100%"></h:inputText>
+
+
+					<h:outputText value="Mot de Passe" style="width:100%"></h:outputText>
+					<h:inputText value="#{helloBean.mdp}"
+						style="margin-left:30%; width:100%"></h:inputText>
+
+					<h:outputText value=""></h:outputText>
+				</h:panelGrid>
+
+
+				<h:panelGrid style="align: center;">
+					<p:commandButton value="Connexion" action="#{helloBean.welcome}"
+						style="margin-left:150%;"></p:commandButton>
+				</h:panelGrid>
+			</p:panel>
+		</h:form>
+	</ui:define>
+
+
+</ui:composition>
+
+</html>

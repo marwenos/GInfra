@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<faces-config xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd"
+	version="2.0">
+
+	<application>
+		<el-resolver>org.springframework.web.jsf.el.SpringBeanFacesELResolver</el-resolver>
+	</application>
+
+	<managed-bean>
+		<managed-bean-name>calendarBean</managed-bean-name>
+		<managed-bean-class>tn.insat.tpweb.gestioninfrastructure.beans.CalendarBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+
+
+	<managed-bean>
+		<managed-bean-name>messagesController</managed-bean-name>
+		<managed-bean-class>tn.insat.tpweb.gestioninfrastructure.beans.MessagesController</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+
+
+
+
+	<managed-bean>
+		<managed-bean-name>importBean</managed-bean-name>
+		<managed-bean-class>tn.insat.tpweb.gestioninfrastructure.beans.Importexport.ImportBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+
+	<managed-bean>
+		<managed-bean-name>exportBean</managed-bean-name>
+		<managed-bean-class>tn.insat.tpweb.gestioninfrastructure.beans.Importexport.ExportBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+
+
+	<managed-bean>
+		<managed-bean-name>quartierBean</managed-bean-name>
+		<managed-bean-class>tn.insat.tpweb.gestioninfrastructure.beans.Recherche.QuartierBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+
+	<managed-bean>
+		<managed-bean-name>utlBean</managed-bean-name>
+		<managed-bean-class>tn.insat.tpweb.gestioninfrastructure.beans.utilisateur.UtilisateurBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+
+	<!-- règles de navigation -->
+
+	<navigation-rule>
+		<display-name>hello.xhtml</display-name>
+		<from-view-id>/hello.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>succes</from-outcome>
+			<to-view-id>/NouveauQuartier.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<!-- Batiment -->
+	<navigation-rule>
+		<display-name>listeBatiment.xhtml</display-name>
+		<from-view-id>/RechercheBatiment.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>liste</from-outcome>
+			<to-view-id>/ListeBatiment.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<display-name>RechercheBatiment.xhtml</display-name>
+		<from-view-id>/RechercheBatiment.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>consultation</from-outcome>
+			<to-view-id>/ConsultationBatiment.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<display-name>batiment.xhtml</display-name>
+		<from-view-id></from-view-id>
+		<navigation-case>
+			<from-outcome>recBatiment</from-outcome>
+			<to-view-id>/RechercheBatiment.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<display-name>bat.xhtml</display-name>
+		<from-view-id></from-view-id>
+		<navigation-case>
+			<from-outcome>nouveauBatiment</from-outcome>
+			<to-view-id>/NouveauBatiment.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<!-- Quartier -->
+
+	<navigation-rule>
+		<display-name>quartier.xhtml</display-name>
+		<from-view-id></from-view-id>
+		<navigation-case>
+			<from-outcome>rechercheQuartier</from-outcome>
+			<to-view-id>/RechercheQuartier.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<display-name>quartier.xhtml</display-name>
+		<from-view-id></from-view-id>
+		<navigation-case>
+			<from-outcome>consulterQuartier</from-outcome>
+			<to-view-id>/ConsultationQuartier.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<display-name>quar.xhtml</display-name>
+		<from-view-id></from-view-id>
+		<navigation-case>
+			<from-outcome>nouveauQuartier</from-outcome>
+			<to-view-id>/NouveauQuartier.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+</faces-config>

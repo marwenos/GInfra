@@ -1,0 +1,24 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+   xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+
+	<p:accordionPanel>
+	
+	
+	    <p:tab title="Saisie" titleStyleClass=".ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default" >
+	         <p:commandButton value="Quartier" action="#{quartierBean.nouveauQuartier}" style="margin-left:2px; width:150px; color:rgb(255,255,255); background-color:rgb(198,7,9);"></p:commandButton>
+	         <p:commandButton value="Batiment" action="#{batimentBean.nouveauBatiment}" style="margin-left:2px; width:150px; color:rgb(255,255,255); background-color:rgb(198,7,9);"></p:commandButton>
+	    </p:tab>
+	
+	    <p:tab title="Recherche">
+	    	<p:commandButton value="Quartier" action="#{quartierBean.rechercher}" style="margin-left:2px; width:150px; color:rgb(255,255,255); background-color:rgb(198,7,9);"></p:commandButton>
+	        <p:commandButton value="Batiment" action="#{batimentBean.recherche}" style="margin-left:2px; width:150px; color:rgb(255,255,255); background-color:rgb(198,7,9);"></p:commandButton>
+	    </p:tab>
+	    
+	</p:accordionPanel> 
+	
+	
+</ui:composition>
